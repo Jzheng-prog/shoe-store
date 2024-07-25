@@ -17,7 +17,7 @@ const Hero = () => {
     <div className='ml-[300px] w-full p-10 mt-2 container' >
 
       {/* jordans */}
-      <div className='opacity-0 translate-y-20 border-b mb-6' id="jordan">
+      <div className='opacity-0 translate-y-20 border-b mb-6 border-black pb-4' id="jordan">
         <h2 className='text-3xl font-bold text-gray-900 mb-4' >Jordans</h2>
         <div className='flex'>
           <p className='w-[400px] mt-5 p-2'>Step into the world of iconic athletic wear with our <span className='font-bold text-lg'>exclusive</span> Jordan collection. Renowned for revolutionizing the world of sports and fashion, Jordan sneakers are not just shoes; they're a symbol of performance and style. Born from the legendary partnership between Michael Jordan and Nike, each pair of Jordans tells a story of excellence and innovation.</p>
