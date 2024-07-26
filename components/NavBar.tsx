@@ -21,8 +21,8 @@ const NavBar: React.FC<NavBarProps> = ({ navElement }) => {
   console.log(toggleMenu);
 
   return (
-    <div className={`left-0 top-0 border h-full bg-gray-800 absolute text-white ${toggleMenu?" w-[300px] ":"w-[100px]"}`}>
-      <div className="flex justify-center items-center h-16 mt-5">
+    <div className={`z-50 left-0 top-0 h-full bg-gray-800 fixed text-white ${toggleMenu?" w-[250px] ":"w-[100px]"}`}>
+      <div className="flex justify-center items-center mt-5">
 
         {toggleMenu?
           <div className='flex justify-center items-center'>
@@ -37,11 +37,11 @@ const NavBar: React.FC<NavBarProps> = ({ navElement }) => {
           </div>
           :
           <div className='pl-4'>
-            <a href="" className="flex justify-center items-center">
+            <a href="" className="flex justify-center items-cente">
                 <img
                   src="/user-logo.png"
                   alt="user-logo"
-                  className="w-12 h-12 bg-white border rounded-full p-2 border-black"
+                  className="w-12 h-12 bg-white border rounded-full p-2 hover:scale-110"
                 />
           </a>
 
@@ -66,7 +66,7 @@ const NavBar: React.FC<NavBarProps> = ({ navElement }) => {
                     {toggleMenu?
                       <p className="p-1">{item.title}</p>
                       :
-                      <img src={item.logo} className="items-center justify-center w-12 h-12 bg-white border rounded-full p-2 border-black"/>}
+                      <img src={item.logo} className="items-center justify-center w-12 h-12 bg-white border p-2 hover:scale-110 rounded-full"/>}
                   </a>
                 </li>
               </ul>

@@ -1,8 +1,10 @@
+import Footer from "@/components/Footer";
 import Heading from "@/components/Heading";
 import NavBar from "@/components/NavBar";
-import Hero from "@/components/Hero";
+import Selections from "@/components/Selections";
+import { HeroParallax } from "@/components/ui/hero-parallax";
 
-import {navElement} from '@/data'
+import {navElement, products} from '@/data'
 
 export default function Home() {
   
@@ -10,7 +12,9 @@ export default function Home() {
     <div className="bg-slate-200 h-full w-full">
       <Heading/>
       <NavBar navElement={navElement} />
-      <Hero/>
+      <HeroParallax products={products}/>
+      <Selections/>
+      <Footer/>
     </div>
   );
 }

@@ -34,3 +34,67 @@ export const navElement = [
     }
 ]
 
+export const cardItem =[
+    {
+        id: 1,
+        title: 'Jordan',
+        logo: '/jordan.svg'
+    },
+    {
+        id: 2,
+        title: 'Slides',
+        logo: '/onyx-slide.svg'
+    },
+];
+
+export const products = [
+    {
+      title: "Jordan",
+      link: "",
+      thumbnail:
+        "/jordan.svg",
+    },
+    {
+        title: "Nike",
+        link: "",
+        thumbnail:
+            "/nike.png",
+    },
+    {
+        title: "Adidas",
+        link: "",
+        thumbnail:
+          "/adidas.png",
+    },
+    {
+        title: "New Balance",
+        link: "",
+        thumbnail:
+          "/new_balance.png",
+    },
+    {
+        title: "Jordan",
+        link: "",
+        thumbnail:
+          "/jordan.svg",
+      },
+      {
+          title: "Nike",
+          link: "",
+          thumbnail:
+              "/nike.png",
+      },
+      {
+          title: "yeezy",
+          link: "",
+          thumbnail:
+            "/yeezy.jpeg",
+      },
+      {
+          title: "Supreme",
+          link: "",
+          thumbnail:
+            "/supreme.png",
+      },
+  ];
+
