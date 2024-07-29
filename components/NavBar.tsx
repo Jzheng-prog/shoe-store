@@ -64,7 +64,7 @@ const NavBar: React.FC<NavBarProps> = ({ navElement }) => {
                 <li>
                   <a href="" className="flex text-center items-center justify-center">
                     {toggleMenu?
-                      <p className="p-1">{item.title}</p>
+                      <p className="w-full rounded-sm p-1 hover:bg-blue-500">{item.title}</p>
                       :
                       <img src={item.logo} className="items-center justify-center w-12 h-12 bg-white border p-2 hover:scale-110 rounded-full"/>}
                   </a>

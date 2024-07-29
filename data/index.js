@@ -1,3 +1,4 @@
+import { title } from "process";
 
 export const navElement = [
     {
@@ -73,7 +74,7 @@ export const products = [
           "/new_balance.png",
     },
     {
-        title: "Jordan",
+        title: "Jordan2",
         link: "",
         thumbnail:
           "/jordan.svg",
@@ -97,4 +98,32 @@ export const products = [
             "/supreme.png",
       },
   ];
+
+  export const socialsList = [
+    {
+        id:1,
+        title: 'discord',
+        logo:'/socials/discord.svg'
+    },
+    {
+        id:2,
+        title: 'facebook',
+        logo:'/socials/facebook.svg'
+    },
+    {
+        id:3,
+        title: 'twitter',
+        logo:'/socials/twitter.svg'
+    },
+    {
+        id:4,
+        title: 'instagram',
+        logo:'/socials/instagram.svg'
+    },
+    {
+        id:5,
+        title: 'telegram',
+        logo:'/socials/telegram.svg'
+    },
+  ]
 

@@ -19,7 +19,7 @@ const Selections = () => {
       <div className='flex justify-center p-10 mt-2'>
 
         {/* container */}
-        <div className='container ml-[300px]'>
+        <div className='container ml-[300px] sm:w-16'>
 
           <h1 className='text-3xl font-bold text-gray-900 mb-4 p-3'> Classic Selections</h1>
 
