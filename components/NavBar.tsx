@@ -21,7 +21,7 @@ const NavBar: React.FC<NavBarProps> = ({ navElement }) => {
   console.log(toggleMenu);
 
   return (
-    <div className={`z-50 left-0 top-0 h-full bg-gray-800 fixed text-white ${toggleMenu?" w-[250px] ":"w-[100px]"}`}>
+    <div className={`z-50 left-0 top-0 h-full bg-gray-800 fixed text-white ${toggleMenu?" w-[250px] ":"w-[100px]"} hidden md:block`}>
       <div className="flex justify-center items-center mt-5">
 
         {toggleMenu?

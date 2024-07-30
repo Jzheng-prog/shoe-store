@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Heading from "@/components/Heading";
+import Highlights from "@/components/Highlights";
 import NavBar from "@/components/NavBar";
 import Selections from "@/components/Selections";
 import { HeroParallax } from "@/components/ui/hero-parallax";
@@ -14,6 +15,7 @@ export default function Home() {
       <NavBar navElement={navElement} />
       <HeroParallax products={products}/>
       <Selections/>
+      <Highlights/>
       <Footer/>
     </div>
   );

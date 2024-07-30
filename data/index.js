@@ -56,6 +56,12 @@ export const products = [
         "/jordan.svg",
     },
     {
+        title: "Vans",
+        link: "",
+        thumbnail:
+          "/vans.png",
+    },
+    {
         title: "Nike",
         link: "",
         thumbnail:
@@ -73,30 +79,26 @@ export const products = [
         thumbnail:
           "/new_balance.png",
     },
+    
     {
-        title: "Jordan2",
+        title: "Puma",
         link: "",
         thumbnail:
-          "/jordan.svg",
-      },
-      {
-          title: "Nike",
-          link: "",
-          thumbnail:
-              "/nike.png",
-      },
-      {
-          title: "yeezy",
-          link: "",
-          thumbnail:
-            "/yeezy.jpeg",
-      },
-      {
-          title: "Supreme",
-          link: "",
-          thumbnail:
-            "/supreme.png",
-      },
+        "/puma.svg",
+    },
+    {
+        title: "yeezy",
+        link: "",
+        thumbnail:
+        "/yeezy.jpeg",
+    },
+    {
+        title: "fila",
+        link: "",
+        thumbnail:
+        "/fila.png",
+    },
+      
   ];
 
   export const socialsList = [
