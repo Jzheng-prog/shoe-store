@@ -25,7 +25,7 @@ const Selections = () => {
           <h1 className='text-3xl font-bold text-gray-900 mx-auto mb-4 p-3 md:ml-[100px]'>Classic Selections</h1>
 
           {/* jordans */}
-          <div className='opacity-0 translate-y-20 md:w-[600px] lg:w-[900px] mb-6 pb-4 rounded-xl p-4 shadow-xl bg-gray-100 mx-auto justify-center md:ml-[100px] lg:mx-auto' id="jordan">
+          <div className='opacity-0 translate-y-20 md:w-[600px] lg:w-[900px] mb-6 pb-4 rounded-xl p-4 shadow-sm bg-gray-100 mx-auto justify-center md:ml-[100px] lg:ml-[20px] xl:mx-auto' id="jordan">
             <h2 className='text-2xl font-semibold text-gray-900 mt-3 p-3'>Jordans</h2>
             <div className='flex flex-col md:flex-row items-center'>
               <p className='m-2 p-1'>Step into the world of iconic athletic wear with our <span className='font-bold text-lg'>exclusive</span> Jordan collection. Renowned for revolutionizing the world of sports and fashion, Jordan sneakers are not just shoes; they're a symbol of performance and style. Born from the legendary partnership between Michael Jordan and Nike, each pair of Jordans tells a story of excellence and innovation.</p>

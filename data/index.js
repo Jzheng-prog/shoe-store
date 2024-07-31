@@ -128,4 +128,18 @@ export const products = [
         logo:'/socials/telegram.svg'
     },
   ]
+  export const popItems = [
+    {
+        title: 'Jordan 4',
+        image: '/popularShoes/thunder-4.jpg',
+    },
+    {
+        title: 'Dunk',
+        image: '/popularShoes/triple-dunk.webp',
+    },
+    {
+        title: 'Yeezy-slide',
+        image: '/popularShoes/yeezy-slides.webp',
+    }
+  ]
 
