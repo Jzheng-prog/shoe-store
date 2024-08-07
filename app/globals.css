@@ -3,10 +3,17 @@
 @tailwind utilities;
 
 .tilt-container {
-    @apply transition-transform ease-in-out duration-300;
-  }
-  
+  @apply transition-transform ease-in-out duration-300;
+}
+
 .tilt-container:hover {
-    @apply transform;
-    transform: rotateY(15deg) rotateX(10deg);
+  @apply transform;
+  transform: rotateY(15deg) rotateX(10deg);
+}
+
+/* Chrome, Safari, Edge, Opera */
+.custom-number-input::-webkit-inner-spin-button,
+.custom-number-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
