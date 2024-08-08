@@ -13,6 +13,7 @@ interface NavBarProps {
 
 const NavBar: React.FC<NavBarProps> = ({ navElement }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
 
   function handleMenu() {
     setToggleMenu(!toggleMenu);
@@ -27,7 +28,7 @@ const NavBar: React.FC<NavBarProps> = ({ navElement }) => {
       } hidden md:block`}
     >
       <div className="flex items-center justify-center mt-[50px] mb-3">
-        <a href="" className="lg:text-2xl lg:font-extrabold text-white ml-4">
+        <a href="" className="md:text-2xl md:font-extrabold text-white ml-4">
           {toggleMenu ? "ShoeStore" : "SS"}
         </a>
         <div className="ml-3">
@@ -75,7 +76,15 @@ const NavBar: React.FC<NavBarProps> = ({ navElement }) => {
                 alt="user-logo"
                 className="w-12 h-12 bg-white rounded-full p-2 "
               />
-              <p className="pl-3">Profile</p>
+              {isLogin ? (
+                <a href="" className="pl-3">
+                  Profile
+                </a>
+              ) : (
+                <a href="/signup" className="pl-3">
+                  Sign-In
+                </a>
+              )}
             </a>
           </div>
         ) : (
