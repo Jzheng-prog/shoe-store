@@ -19,8 +19,6 @@ const NavBar: React.FC<NavBarProps> = ({ navElement }) => {
     setToggleMenu(!toggleMenu);
   }
 
-  console.log(toggleMenu);
-
   return (
     <div
       className={`z-50 left-0 top-0 h-full bg-gray-800 fixed text-white ${

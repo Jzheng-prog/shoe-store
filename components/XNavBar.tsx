@@ -3,7 +3,7 @@ import React from "react";
 
 const XNavBar = () => {
   return (
-    <div className="border border-t-2 mt-2 fixed bottom-0 left-0 w-full bg-white">
+    <div className="mt-2 fixed bottom-0 left-0 w-full bg-white">
       <ul className="flex p-2 justify-between mx-2">
         {xNavEle.map((item, index) => (
           <li key={index}>

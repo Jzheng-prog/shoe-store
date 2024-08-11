@@ -1,4 +1,7 @@
-import React from "react";
+"use client";
+import { GlobalContext } from "@/context";
+import React, { useContext } from "react";
+import FavCard from "../FavCard";
 
 const ItemDetails = () => {
   const dummyData = {
@@ -9,6 +12,8 @@ const ItemDetails = () => {
     size: [6, 7, 8, 9, 10, 11],
   };
   const { title, price, size } = dummyData;
+
+  const { addToFav } = useContext(GlobalContext);
 
   return (
     <div>
@@ -34,7 +39,10 @@ const ItemDetails = () => {
             </ul>
 
             <div className="flex">
-              <button className="border border-black p-2 rounded-full m-1 text-xs">
+              <button
+                className="border border-black p-2 rounded-full m-1 text-xs"
+                onClick={() => addToFav(dummyData)}
+              >
                 Add to Favorite
               </button>
               <button className="border border-black p-2 rounded-full text-white bg-slate-700 m-1 text-xs">
@@ -44,6 +52,7 @@ const ItemDetails = () => {
           </div>
         </div>
       </div>
+      <FavCard />
     </div>
   );
 };

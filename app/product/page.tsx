@@ -1,6 +1,7 @@
 import NavBar from "@/components/NavBar";
-import ItemDetails from "@/components/product/ItemDetails";
+import ItemDetails from "@/components/productCom/ItemDetails";
 import XNavBar from "@/components/XNavBar";
+import GlobalState from "@/context";
 import { navElement } from "@/data";
 import React from "react";
 
@@ -11,7 +12,9 @@ const Product = () => {
         <h1 className="pt-5 flex items-center justify-center font-extrabold text-2xl">
           Product Details
         </h1>
-        <ItemDetails />
+        <GlobalState>
+          <ItemDetails />
+        </GlobalState>
       </div>
 
       {/* Nav */}
