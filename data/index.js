@@ -134,18 +134,23 @@ export const xNavEle = [
   {
     title: "Home",
     image: "/xNavElement/home.svg",
+    link: "/",
   },
+
   {
-    title: "Explore",
-    image: "/xNavElement/explore.png",
+    title: "Profile",
+    image: "/xNavElement/profile.svg",
+    link: "/account",
   },
   {
     title: "Cart",
     image: "/xNavElement/cart.webp",
+    link: "/mycart",
   },
   {
-    title: "Profile",
-    image: "/xNavElement/profile.svg",
+    title: "Favorites",
+    image: "/accountCard/favorites.png",
+    link: "/favorites",
   },
 ];
 

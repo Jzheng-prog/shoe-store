@@ -42,9 +42,9 @@ const Login_Form: React.FC<LoginFormProps> = ({ changeForm }) => {
           <div className="h-[50px] relative flex items-center text-xs">
             <p className="text-center">
               Don't have an Account?
-              <button className="text-blue-600 m-1" onClick={changeForm}>
+              <span className="text-blue-600 m-1" onClick={changeForm}>
                 Signup Instead
-              </button>
+              </span>
             </p>
           </div>
         </form>

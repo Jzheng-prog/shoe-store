@@ -1,15 +1,21 @@
+import dynamic from "next/dynamic";
 import React from "react";
 
 interface ButtonProps {
   title: string;
   handleClick: () => void; // Define handleClick prop
+  dynamicClass: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ title, handleClick }) => {
+const Button: React.FC<ButtonProps> = ({
+  title,
+  handleClick,
+  dynamicClass,
+}) => {
   return (
-    <div className="lg:w-[900px] lg:justify-center items-center lg:mx-auto m-3">
+    <div className="flex lg:justify-center items-center lg:mx-auto m-3 w-full">
       <button
-        className="p-2 rounded-lg w-full bg-red-500 text-white"
+        className={`${dynamicClass} p-2 rounded-lg w-full text-white`}
         onClick={handleClick}
       >
         {title}

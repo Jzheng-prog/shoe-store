@@ -60,9 +60,9 @@ const Sign_up_Form: React.FC<LoginFormProps> = ({ changeForm }) => {
           <div className="h-[50px] relative flex items-center text-xs">
             <p className="text-center">
               Already have an Account?
-              <button className="text-blue-600 m-1" onClick={changeForm}>
+              <span className="text-blue-600 m-1" onClick={changeForm}>
                 Login Instead
-              </button>
+              </span>
             </p>
           </div>
         </form>

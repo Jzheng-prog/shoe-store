@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 
 interface NavElement {
   id: number;
@@ -26,9 +27,12 @@ const NavBar: React.FC<NavBarProps> = ({ navElement }) => {
       } hidden md:block`}
     >
       <div className="flex items-center justify-center mt-[50px] mb-3">
-        <a href="" className="md:text-2xl md:font-extrabold text-white ml-4">
+        <Link
+          href="/"
+          className="md:text-2xl md:font-extrabold text-white ml-4"
+        >
           {toggleMenu ? "ShoeStore" : "SS"}
-        </a>
+        </Link>
         <div className="ml-3">
           <button onClick={handleMenu}>{toggleMenu ? "<" : ">"}</button>
         </div>

@@ -4,6 +4,9 @@ import React, { createContext, useState, ReactNode, useEffect } from "react";
 interface FavoriteItem {
   id: number;
   title: string;
+  price: number;
+  image: string;
+  availability: string;
 }
 interface GlobalContextType {
   favoriteList: FavoriteItem[];
@@ -16,9 +19,9 @@ export default function GlobalState({ children }: { children: ReactNode }) {
   const [favoriteList, setFavoriteList] = useState<FavoriteItem[]>([]);
   const [toggle, setToggle] = useState(false);
 
-  useEffect(() => {
-    console.log(favoriteList);
-  }, [favoriteList]);
+  // useEffect(() => {
+  //   console.log(favoriteList);
+  // }, [favoriteList]);
 
   function addToFav(currItem: FavoriteItem) {
     setToggle(!toggle);
@@ -29,10 +32,11 @@ export default function GlobalState({ children }: { children: ReactNode }) {
     if (index === -1) {
       copy.push(currItem);
     } else {
-      copy.splice(index);
+      copy.splice(index, 1); // Correct way to remove the item
     }
     setFavoriteList(copy);
   }
+
   return (
     <GlobalContext.Provider value={{ favoriteList, addToFav }}>
       {children}

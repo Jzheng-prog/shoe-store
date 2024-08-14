@@ -1,6 +1,7 @@
 "use client";
 import React, { useContext } from "react";
-import { GlobalContext } from "@/context";
+import context, { GlobalContext } from "@/context";
+import Button from "./Button";
 
 const FavCard = () => {
   const context = useContext(GlobalContext);
@@ -13,6 +14,7 @@ const FavCard = () => {
   const { favoriteList } = context;
 
   console.log(favoriteList.length);
+  console.log("Global Context = " + context.favoriteList);
 
   return (
     <div className="flex justify-center flex-wrap">
@@ -20,10 +22,18 @@ const FavCard = () => {
         favoriteList.map((item) => (
           <div
             key={item.id}
-            className="border border-black m-2 p-4 rounded-lg shadow-lg"
+            className="bg-white m-2 p-4 rounded-lg shadow-lg items-center lg:w-[400px]"
           >
-            <h1 className="text-xl font-bold">{item.title}</h1>
-            <p>ID: {item.id}</p>
+            <h1 className="text-xl font-extrabold text-center">{item.title}</h1>
+            <p className="font-semibold text-center">Price: ${item.price}</p>
+            <p className="font-semibold text-center text-green-600">
+              {item.availability}
+            </p>
+
+            <img src={item.image} alt="" width={200} className="lg:w-full" />
+
+            <Button dynamicClass="bg-blue-500" title="more" />
+            <Button dynamicClass="bg-red-500 " title="delete" />
           </div>
         ))
       ) : (

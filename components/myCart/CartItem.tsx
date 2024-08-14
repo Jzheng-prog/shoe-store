@@ -20,8 +20,8 @@ const CartItem = () => {
           <img className="p-2 lg:p-5" src="/jordan-1-red.webp" width={500} />
 
           {/* Quantity */}
-          <p className="m-5 flex items-center">
-            <span className="mr-1">Quantity: </span>
+          <p className="my-1 p-1 flex items-center">
+            <span className="m-1">Quantity: </span>
 
             <button
               onClick={() => handleQuantity("minus")}
@@ -46,7 +46,7 @@ const CartItem = () => {
           {/*  */}
         </div>
         <div className="p-2 lg:p-5 relative w-full">
-          <p className="my-1 p-2">Jordan-1 Retro</p>
+          <p className="my-1 px-2 py-1">Jordan-1 Retro</p>
           <p className="my-1 p-2">
             Size:
             <select>
