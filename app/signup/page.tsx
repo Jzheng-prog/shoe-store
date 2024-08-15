@@ -6,6 +6,11 @@ import NavBar from "@/components/NavBar";
 import { navElement } from "@/data";
 import Login_Form from "@/components/user_auth/Login_Form";
 
+import { FormEvent } from "react";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+
 const SignUp = () => {
   const [isLoginPage, setIsLoginPage] = useState(false);
 
