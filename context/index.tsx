@@ -8,23 +8,33 @@ interface FavoriteItem {
   image: string;
   availability: string;
 }
+interface CartItem {
+  id: number;
+  title: string;
+  price: number;
+  image: string;
+  availability: string;
+  size: number[];
+  quantity: number;
+}
 interface GlobalContextType {
+  cartItems: CartItem[];
   favoriteList: FavoriteItem[];
-  addToFav: (item: FavoriteItem) => void;
+  updateListItem: (item: FavoriteItem) => void;
+  updateCartItem: (item: CartItem) => void;
 }
 
 export const GlobalContext = createContext<GlobalContextType | null>(null);
 
 export default function GlobalState({ children }: { children: ReactNode }) {
   const [favoriteList, setFavoriteList] = useState<FavoriteItem[]>([]);
-  const [toggle, setToggle] = useState(false);
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   // useEffect(() => {
   //   console.log(favoriteList);
   // }, [favoriteList]);
 
-  function addToFav(currItem: FavoriteItem) {
-    setToggle(!toggle);
+  function updateListItem(currItem: FavoriteItem) {
     let copy = [...favoriteList];
 
     const index = copy.findIndex((item) => item.id === currItem.id);
@@ -37,8 +47,22 @@ export default function GlobalState({ children }: { children: ReactNode }) {
     setFavoriteList(copy);
   }
 
+  function updateCartItem(currItem: CartItem) {
+    let copy = [...cartItems];
+    const index = copy.findIndex((item) => item.id === currItem.id);
+
+    if (index === -1) {
+      copy.push(currItem);
+    } else {
+      copy.splice(index, 1); // Correct way to remove the item
+    }
+    setCartItems(copy);
+  }
+
   return (
-    <GlobalContext.Provider value={{ favoriteList, addToFav }}>
+    <GlobalContext.Provider
+      value={{ favoriteList, updateListItem, cartItems, updateCartItem }}
+    >
       {children}
     </GlobalContext.Provider>
   );

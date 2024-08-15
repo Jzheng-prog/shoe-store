@@ -7,7 +7,7 @@ const ShippingInfo = () => {
         <h1 className="p-3 text-white flex items-center">
           Shipping to: 1234 Blank Ter
         </h1>
-        <button className=" p-2 rounded-lg m-2 bg-white items-center flex text-xs md:text-lg lg:text-lg">
+        <button className="p-2 rounded-lg m-2 bg-white items-center flex text-xs md:text-lg lg:text-lg">
           change
         </button>
       </div>

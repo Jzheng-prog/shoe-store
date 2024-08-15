@@ -157,27 +157,32 @@ export const xNavEle = [
 export const accountCard = [
   {
     title: "Orders",
+    link: "",
     image: "/accountCard/cart.webp",
     description:
       "Track, return, cancel and order, download invoice or buy again",
   },
   {
     title: "Address",
+    link: "",
     image: "/accountCard/address.png",
     description: "Edit, remove or set default address",
   },
   {
     title: "Your Payment",
+    link: "",
     image: "/accountCard/payment.png",
     description: "View all transactions, manage payment methods and settings",
   },
   {
     title: "Login & Security",
+    link: "",
     image: "/accountCard/security.png",
     description: "Edit login, name, mobile number",
   },
   {
     title: "Favorites",
+    link: "/favorites",
     image: "/accountCard/favorites.png",
     description: "View, modify and share your list or create new ones",
   },

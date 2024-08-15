@@ -1,6 +1,6 @@
 "use client";
 import React, { useContext } from "react";
-import context, { GlobalContext } from "@/context";
+import { GlobalContext } from "@/context";
 import Button from "./Button";
 
 const FavCard = () => {
@@ -8,13 +8,10 @@ const FavCard = () => {
 
   // Ensure context is not null
   if (!context) {
-    return <p>Loading...{context}</p>;
+    return <p>Loading...</p>;
   }
 
-  const { favoriteList } = context;
-
-  console.log(favoriteList.length);
-  console.log("Global Context = " + context.favoriteList);
+  const { favoriteList, updateListItem } = context;
 
   return (
     <div className="flex justify-center flex-wrap">
@@ -33,7 +30,11 @@ const FavCard = () => {
             <img src={item.image} alt="" width={200} className="lg:w-full" />
 
             <Button dynamicClass="bg-blue-500" title="more" />
-            <Button dynamicClass="bg-red-500 " title="delete" />
+            <Button
+              handleClick={() => updateListItem(item)}
+              dynamicClass="bg-red-500 "
+              title="delete"
+            />
           </div>
         ))
       ) : (

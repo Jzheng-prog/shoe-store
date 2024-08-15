@@ -3,7 +3,7 @@ import React from "react";
 
 const Highlights = () => {
   return (
-    <div className="flex justify-center my-3 lg:my-[200px] py-3">
+    <div className="flex justify-center my-3 lg:my-[200px] pb-10">
       <div>
         <h1 className="text-3xl font-bold text-gray-900 mx-auto mb-2 text-center p-3">
           Popular 2024

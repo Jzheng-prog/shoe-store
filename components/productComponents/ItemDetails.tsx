@@ -14,7 +14,13 @@ const ItemDetails = () => {
   };
   const { title, price, size } = dummyData;
 
-  const { addToFav } = useContext(GlobalContext);
+  const context = useContext(GlobalContext);
+
+  if (!context) {
+    return <div>No Context</div>;
+  }
+
+  const { updateListItem, updateCartItem } = context;
 
   return (
     <div>
@@ -42,11 +48,14 @@ const ItemDetails = () => {
             <div className="flex justify-between">
               <button
                 className="bg-red-500 p-2 rounded-full m-1 text-xs text-white shadow-md"
-                onClick={() => addToFav(dummyData)}
+                onClick={() => updateListItem(dummyData)}
               >
                 Add to Favorite
               </button>
-              <button className="bg-gray-800 p-2 rounded-full m-1 text-xs text-white shadow-md">
+              <button
+                className="bg-gray-800 p-2 rounded-full m-1 text-xs text-white shadow-md"
+                onClick={() => updateCartItem(dummyData)}
+              >
                 Add to Cart
               </button>
             </div>

@@ -1,10 +1,12 @@
 import React from "react";
+import Link from "next/link";
 
 interface CardProps {
   data: {
     title: string;
     description: string;
     image: string;
+    link: string;
   }[];
 }
 const Card: React.FC<CardProps> = ({ data }) => {
@@ -12,8 +14,8 @@ const Card: React.FC<CardProps> = ({ data }) => {
     <div className="w-full flex-col md:flex-wrap md:flex-row md:flex">
       {data.map((item, index) => (
         <div className="w-[300px] mx-auto" key={index}>
-          <a
-            href=""
+          <Link
+            href={item.link}
             className="border border-gray-300 m-3 flex rounded-xl p-3 md:h-[150px] md:items-center"
           >
             <img
@@ -25,7 +27,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
               <h1 className="text-lg">{item.title}</h1>
               <p className="text-sm">{item.description}</p>
             </div>
-          </a>
+          </Link>
         </div>
       ))}
     </div>

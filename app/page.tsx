@@ -16,8 +16,9 @@ export default function Home() {
       <HeroParallax products={products} />
       <Selections />
       <Highlights />
-      <Footer />
-
+      <div className="hidden md:block lg:block ">
+        <Footer />
+      </div>
       <div className="md:hidden">
         <XNavBar />
       </div>
