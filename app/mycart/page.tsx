@@ -3,9 +3,6 @@ import Heading from "@/components/Heading";
 import CartItem from "@/components/myCart/CartItem";
 import Button from "@/components/Button";
 import ShippingInfo from "@/components/myCart/ShippingInfo";
-import NavBar from "@/components/NavBar";
-import XNavBar from "@/components/XNavBar";
-import { navElement } from "@/data";
 import React, { useContext } from "react";
 import { GlobalContext } from "@/context";
 
@@ -59,11 +56,6 @@ const MyCart = () => {
           </div>
         </div>
       </div>
-
-      <div className="md:hidden">
-        <XNavBar />
-      </div>
-      <NavBar navElement={navElement} />
     </div>
   );
 };

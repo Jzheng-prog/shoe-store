@@ -1,4 +1,5 @@
 "use client";
+import { useSession } from "next-auth/react";
 import React, { createContext, useState, ReactNode, useEffect } from "react";
 
 interface FavoriteItem {
@@ -22,6 +23,8 @@ interface GlobalContextType {
   favoriteList: FavoriteItem[];
   updateListItem: (item: FavoriteItem) => void;
   updateCartItem: (item: CartItem) => void;
+  isAuthenticated: boolean;
+  setIsAuthenticated: (auth: boolean) => void;
 }
 
 export const GlobalContext = createContext<GlobalContextType | null>(null);
@@ -30,9 +33,16 @@ export default function GlobalState({ children }: { children: ReactNode }) {
   const [favoriteList, setFavoriteList] = useState<FavoriteItem[]>([]);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
-  // useEffect(() => {
-  //   console.log(favoriteList);
-  // }, [favoriteList]);
+  const { data: session, status } = useSession();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    if (status === "authenticated") {
+      setIsAuthenticated(true);
+    } else {
+      setIsAuthenticated(false);
+    }
+  }, [status]);
 
   function updateListItem(currItem: FavoriteItem) {
     let copy = [...favoriteList];
@@ -61,7 +71,14 @@ export default function GlobalState({ children }: { children: ReactNode }) {
 
   return (
     <GlobalContext.Provider
-      value={{ favoriteList, updateListItem, cartItems, updateCartItem }}
+      value={{
+        favoriteList,
+        updateListItem,
+        cartItems,
+        updateCartItem,
+        isAuthenticated,
+        setIsAuthenticated,
+      }}
     >
       {children}
     </GlobalContext.Provider>

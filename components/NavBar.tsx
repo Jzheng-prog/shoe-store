@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
-import { useRouter } from "next/router";
+import router, { useRouter } from "next/router";
 
 interface NavElement {
   id: number;
@@ -17,7 +17,6 @@ interface NavBarProps {
 const NavBar: React.FC<NavBarProps> = ({ navElement }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const { status } = useSession();
-  const router = useRouter();
 
   function handleMenu() {
     setToggleMenu(!toggleMenu);
