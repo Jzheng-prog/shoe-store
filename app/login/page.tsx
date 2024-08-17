@@ -19,7 +19,7 @@ export default function Login() {
     if (res?.error) {
       setError(res.error as string);
     }
-    console.log("res in login handle submit: " + res);
+    console.log("res in login handle submit: " + res?.status);
     if (res?.ok) {
       return router.push("/");
     }
@@ -58,7 +58,7 @@ export default function Login() {
           href="/register"
           className="text-sm text-[#888] transition duration-150 ease hover:text-black"
         >
-          Don't have an account?
+          Dont have an account?
         </Link>
       </form>
     </section>

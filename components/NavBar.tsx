@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import { signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 interface NavElement {
   id: number;
@@ -14,7 +16,8 @@ interface NavBarProps {
 
 const NavBar: React.FC<NavBarProps> = ({ navElement }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
-  const [isLogin, setIsLogin] = useState(false);
+  const { status } = useSession();
+  const router = useRouter();
 
   function handleMenu() {
     setToggleMenu(!toggleMenu);
@@ -69,25 +72,23 @@ const NavBar: React.FC<NavBarProps> = ({ navElement }) => {
       </div>
 
       {/* Profile Button */}
-      <div className="flex justify-center items-center absolute bottom-0 m-3">
+      <div className="flex justify-center items-center absolute bottom-0 w-full">
         {toggleMenu ? (
-          <div className="flex justify-center items-center">
-            <a href="" className="flex justify-center items-center p-3">
-              <img
-                src="/user-logo.png"
-                alt="user-logo"
-                className="w-12 h-12 bg-white rounded-full p-2 "
-              />
-              {isLogin ? (
-                <a href="" className="pl-3">
-                  Profile
-                </a>
-              ) : (
-                <a href="/signup" className="pl-3">
-                  Sign-In
-                </a>
-              )}
-            </a>
+          <div className="flex justify-center items-center text-center my-6 w-full">
+            {status === "authenticated" ? (
+              <button
+                className="text-white border border-white hover:border-blue-400 p-3 m-2 rounded-lg"
+                onClick={() => {
+                  signOut({ redirect: false }).then(() => {
+                    router.push("/");
+                  });
+                }}
+              >
+                Sign Out
+              </button>
+            ) : (
+              <h1>Sign-in</h1>
+            )}
           </div>
         ) : (
           <div className="pl-4">

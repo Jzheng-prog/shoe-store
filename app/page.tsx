@@ -20,16 +20,30 @@ export default function Home() {
   const showSession = () => {
     if (status === "authenticated") {
       return (
-        <button
-          className="border border-solid border-black rounded"
-          onClick={() => {
-            signOut({ redirect: false }).then(() => {
-              router.push("/");
-            });
-          }}
-        >
-          Sign Out
-        </button>
+        <div className="bg-slate-200 h-full w-full">
+          {/* Button to sign out */}
+          <button
+            className="border border-solid border-black rounded"
+            onClick={() => {
+              signOut({ redirect: false }).then(() => {
+                router.push("/");
+              });
+            }}
+          >
+            Sign Out
+          </button>
+          <Heading title={"ShoeStore"} />
+          <HeroParallax products={products} />
+          <Selections />
+          <Highlights />
+          <div className="hidden md:block lg:block ">
+            <Footer />
+          </div>
+          <div className="md:hidden">
+            <XNavBar />
+          </div>
+          <NavBar navElement={navElement} />
+        </div>
       );
     } else if (status === "loading") {
       return <span className="text-[#888] text-sm mt-7">Loading...</span>;
@@ -46,7 +60,9 @@ export default function Home() {
   };
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
-      <h1 className="text-xl">Home</h1>
+      <div className={`${status === "authenticated" ? "hidden" : "block"}`}>
+        <Heading title={"ShoeStore"} />
+      </div>
       {showSession()}
     </main>
   );
