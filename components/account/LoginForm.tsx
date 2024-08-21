@@ -1,0 +1,50 @@
+import React, { FormEvent } from "react";
+import Link from "next/link";
+
+interface LoginFormProps {
+  handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
+  error: string;
+}
+
+const LoginForm: React.FC<LoginFormProps> = ({ handleSubmit, error }) => {
+  return (
+    <div>
+      <form
+        className="p-6 w-full max-w-[400px] flex flex-col justify-between items-center gap-2 
+        border border-solid border-black bg-white rounded"
+        onSubmit={handleSubmit}
+      >
+        {error && <div className="text-black">{error}</div>}
+        <h1 className="mb-5 w-full text-2xl font-bold">Sign In</h1>
+        <label className="w-full text-sm">Email</label>
+        <input
+          type="email"
+          placeholder="Email"
+          className="w-full h-8 border border-solid border-black rounded p-2"
+          name="email"
+        />
+        <label className="w-full text-sm">Password</label>
+        <div className="flex w-full">
+          <input
+            type="password"
+            placeholder="Password"
+            className="w-full h-8 border border-solid border-black rounded p-2"
+            name="password"
+          />
+        </div>
+        <button className="w-full border border-solid border-black rounded">
+          Sign In
+        </button>
+
+        <Link
+          href="/register"
+          className="text-sm text-[#888] transition duration-150 ease hover:text-black"
+        >
+          Dont have an account?
+        </Link>
+      </form>
+    </div>
+  );
+};
+
+export default LoginForm;
