@@ -24,10 +24,15 @@ const ItemDetails = () => {
 
   return (
     <div>
-      <div className="rounded-lg shadow-lg m-3 bg-gray-100 p-3 md:w-[600px] md:mx-auto">
-        <img src="/jordan-1-red.webp" alt="" width={500} className="p-4" />
+      <div className="rounded-lg shadow-lg m-3 bg-gray-100 md:w-[600px] md:mx-auto border border-gray-300">
+        <img
+          src="/jordan-1-red.webp"
+          alt=""
+          width={500}
+          className="p-2 bg-gray-200 w-full"
+        />
 
-        <div className="mx-auto w-full p-2">
+        <div className="mx-auto w-full p-3 md:p-5">
           <div className="w-full h-full">
             <h1 className="text-lg font-bold">{title}</h1>
             <p className="font-semibold">${price}</p>
@@ -47,13 +52,13 @@ const ItemDetails = () => {
 
             <div className="flex justify-between">
               <button
-                className="bg-red-500 p-2 rounded-full m-1 text-xs text-white shadow-md"
+                className="bg-red-500 p-3 rounded-full m-1 text-xs text-white shadow-md"
                 onClick={() => updateListItem(dummyData)}
               >
                 Add to Favorite
               </button>
               <button
-                className="bg-gray-800 p-2 rounded-full m-1 text-xs text-white shadow-md"
+                className="bg-gray-800 p-3 rounded-full m-1 text-xs text-white shadow-md"
                 onClick={() => updateCartItem(dummyData)}
               >
                 Add to Cart

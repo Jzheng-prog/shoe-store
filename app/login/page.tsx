@@ -28,7 +28,7 @@ export default function Login() {
 
   return (
     <section className="w-full h-screen flex items-center justify-center">
-      <div>
+      <div className="p-4 w-[300px] md:ml-[100px] lg:w-[400px]">
         <Heading title="ShoeStore" />
         <LoginForm handleSubmit={handleSubmit} error={error} />
       </div>

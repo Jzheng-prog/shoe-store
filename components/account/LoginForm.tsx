@@ -8,19 +8,19 @@ interface LoginFormProps {
 
 const LoginForm: React.FC<LoginFormProps> = ({ handleSubmit, error }) => {
   return (
-    <div>
+    <div className="w-full">
       <form
-        className="p-6 w-full max-w-[400px] flex flex-col justify-between items-center gap-2 
-        border border-solid border-black bg-white rounded"
+        className="p-6 w-full flex flex-col justify-between gap-2 
+        border bg-white rounded shadow-lg md:w-full"
         onSubmit={handleSubmit}
       >
         {error && <div className="text-black">{error}</div>}
-        <h1 className="mb-5 w-full text-2xl font-bold">Sign In</h1>
+        <h1 className="mb-5 w-full text-2xl font-bold">Sign-in</h1>
         <label className="w-full text-sm">Email</label>
         <input
           type="email"
           placeholder="Email"
-          className="w-full h-8 border border-solid border-black rounded p-2"
+          className="w-full h-8 border border-solid border-gray-400 rounded p-2"
           name="email"
         />
         <label className="w-full text-sm">Password</label>
@@ -28,12 +28,12 @@ const LoginForm: React.FC<LoginFormProps> = ({ handleSubmit, error }) => {
           <input
             type="password"
             placeholder="Password"
-            className="w-full h-8 border border-solid border-black rounded p-2"
+            className="w-full h-8 border border-solid border-gray-400 rounded p-2"
             name="password"
           />
         </div>
-        <button className="w-full border border-solid border-black rounded">
-          Sign In
+        <button className="w-full my-3 p-2 bg-blue-400 hover:bg-blue-500 shadow-sm text-white rounded font-bold">
+          Login
         </button>
 
         <Link
