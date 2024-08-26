@@ -52,7 +52,7 @@ export default function GlobalState({ children }: { children: ReactNode }) {
     if (index === -1) {
       copy.push(currItem);
     } else {
-      copy.splice(index, 1); // Correct way to remove the item
+      copy.splice(index, 1);
     }
     setFavoriteList(copy);
   }

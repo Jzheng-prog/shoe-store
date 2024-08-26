@@ -21,10 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <Provider>
         <body>
-          <NavBar navElement={navElement} />
+          {/* <NavBar navElement={navElement} />
           <div className="md:hidden">
             <XNavBar />
-          </div>
+          </div> */}
           <GlobalState>{children}</GlobalState>
         </body>
       </Provider>

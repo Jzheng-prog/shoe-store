@@ -20,7 +20,6 @@ export default function Login() {
     if (res?.error) {
       setError(res.error as string);
     }
-    console.log("res in login handle submit: " + res?.status);
     if (res?.ok) {
       return router.push("/");
     }

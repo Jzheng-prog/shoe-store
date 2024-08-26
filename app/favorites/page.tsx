@@ -3,7 +3,6 @@ import Heading from "@/components/Heading";
 import FavCard from "@/components/FavCard";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
-import Button from "@/components/Button";
 
 const Favorites = () => {
   const { status } = useSession();
